@@ -43,8 +43,9 @@ function isSymmetric1($left, $right) {
         return false;
     }
     if ($left->val == $right->val) {
-        return isSymmetric1($left->left, $right->right);
-        return isSymmetric1($left->right, $right->left);
+        if (false == isSymmetric1($left->left, $right->right)) return false;
+        if (false == isSymmetric1($left->right, $right->left)) return false;
+        return true;
     } else {
         return false;
     }
